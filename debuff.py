@@ -1,6 +1,5 @@
 # debuff.py (modification)
 from config import DEBUFF_IMAGES, REWIND_TIMER, DEBUFF_IMAGES
-from rewind_puddle import RewindPuddle
 from circle_effect import CircleEffect
 import pygame
 

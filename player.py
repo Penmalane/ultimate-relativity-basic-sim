@@ -8,9 +8,6 @@ from pygame.locals import (
 )
 from config import SCREEN_WIDTH, SCREEN_HEIGHT, UNFREEZE_EVENT
 
-dx = 5
-dy = 5
-
 class Player(pygame.sprite.Sprite):
     def __init__(self, arena, role):
         super(Player, self).__init__()
@@ -23,6 +20,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect(center=arena.rect.center)
         self.is_stunned = False  # To track if the player is stunned
         self.arena = arena  # The arena object
+        self.initial_position = self.rect.center
 
     def update(self, pressed_keys):
         if self.is_stunned:
@@ -54,4 +52,9 @@ class Player(pygame.sprite.Sprite):
 
     def unfreeze(self):
         self.is_stunned = False
+        pygame.time.set_timer(UNFREEZE_EVENT, 0)  # Stop the stun timer
+
+    def reset(self):
+        self.rect.center = self.initial_position  # Reset to the initial position
+        self.is_stunned = False  # Ensure the player is not stunned
         pygame.time.set_timer(UNFREEZE_EVENT, 0)  # Stop the stun timer

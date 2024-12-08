@@ -84,12 +84,10 @@ def get_configuration():
         selected_configuration = support_debuff_configuration()  # Define your Support configuration
 
 def reset():
-    global arena, role, debuffs, selected_configuration, circle_effects, reset_timer, current_time 
-    player = Player(arena, role)  # Re-initialize the player to reset position and status
-    arena = Arena(500, "assets/arena.png")  # Re-initialize the arena
+    global arena, role, debuffs, selected_configuration, circle_effects, reset_timer, current_time, player
+    player.reset()
     debuffs = []  # Clear debuffs
-    get_configuration()
-    # Reinitialize debuffs based on the new configuration
+    arena = Arena(500, "assets/arena.png")
     for debuff_type, duration in selected_configuration:
         debuffs.append(Debuff(debuff_type, duration, player, arena))
     circle_effects = []  # Clear any ongoing circle effects
