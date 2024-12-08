@@ -30,7 +30,7 @@ SUPPORT_DEBUFF_CONFIGURATIONS = [
 
 DPS_DEBUFF_CONFIGURATIONS = [
     [("eye", 42), ("stack", 10), ("rewind", 25), ("fire", 30)],
-    [("spread", 42), ("rewind", 25), ("ice", 20)],
+    [("eye", 42), ("rewind", 25), ("ice", 20)],
     [("spread", 42), ("rewind", 15), ("fire", 20)],
     [("stack", 20), ("spread", 42), ("rewind", 15), ("fire", 10)]
 ]
