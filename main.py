@@ -88,6 +88,7 @@ def reset():
     player.reset()
     debuffs = []  # Clear debuffs
     arena = Arena(500, "assets/arena.png")
+    get_configuration()
     for debuff_type, duration in selected_configuration:
         debuffs.append(Debuff(debuff_type, duration, player, arena))
     circle_effects = []  # Clear any ongoing circle effects
