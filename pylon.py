@@ -36,7 +36,7 @@ class Pylon(pygame.sprite.Sprite):
         # Determine the rotation delay based on pylon status
         if self.status == 'fast':
             rotation_delay = 12  # 12 seconds for "fast"
-        elif self.status == 'slow':
+        elif self.status == 'none':
             rotation_delay = 22  # 22 seconds for "slow"
         else:
             rotation_delay = 32  # 32 seconds for "none"
